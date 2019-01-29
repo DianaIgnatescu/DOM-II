@@ -69,6 +69,8 @@ window.addEventListener('load', () => {
 // 10. === Contextmenu === right clicking on something removes it. 
 
   window.addEventListener('contextmenu', (event) => {
+    // preventDefault() prevents the right click menu from being displayed. 
+    event.preventDefault();
     event.target.remove();
   });
 
