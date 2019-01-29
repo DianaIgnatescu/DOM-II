@@ -118,7 +118,7 @@ window.addEventListener('keyup', (event) => {
     } 
   });
 
+// === Stretch: Implemented GSAP animation with Fun Bus logo. 
+  TweenMax.from("#logo", 3, {x:300, opacity:0, scale:0.7});
 });
 
-// === Stretch: Implemented GSAP animation with Fun Bus logo. 
-TweenMax.from("#logo", 3, {x:300, opacity:0, scale:0.7});
