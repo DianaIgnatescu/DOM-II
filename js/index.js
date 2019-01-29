@@ -54,6 +54,7 @@ window.addEventListener('load', () => {
     window.addEventListener('scroll', (event) => {
       if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
         header.style.height = '40px';
+        TimelineLite('.main-navigation', 1, {ease:Back.easeOut});
       } else {
         header.style.height = '90px';
       }
@@ -100,6 +101,7 @@ window.addEventListener('keyup', (event) => {
     }
   }
 });
+
 // === Preventing event propagation
 
   let contentDestination = document.querySelector('.content-destination');
@@ -116,5 +118,7 @@ window.addEventListener('keyup', (event) => {
     } 
   });
 
-
 });
+
+// === Stretch: Implemented GSAP animation with Fun Bus logo. 
+TweenMax.from("#logo", 3, {x:300, opacity:0, scale:0.7});
