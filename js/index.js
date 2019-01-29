@@ -50,14 +50,54 @@ window.addEventListener('load', () => {
 
 // 8. === Scroll === Make header get smaller as you "scroll" down.
 
+  const header = document.querySelector('header');
+    window.addEventListener('scroll', (event) => {
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        header.style.height = '40px';
+      } else {
+        header.style.height = '90px';
+      }
+    });
 
+// 9. === Click === Click on first 'sign me up' to say alert 'everything is full'.
 
-// 9. === Click === Click on sign me up to say alert 'everything is full'.
+  const check = document.querySelectorAll('.btn');
+    check[0].addEventListener('click', () => {
+      alert('Unfortunately, this resort is now fully booked!');
+    });
 
 // 10. === Contextmenu === right clicking on something removes it. 
 
+  window.addEventListener('contextmenu', (event) => {
+    event.target.remove();
+  });
+
 // 11. === Keypress === pressing space either takes you to the bottom or the top.
 
+window.addEventListener('keyup', (event) => {
+  if (event.code === 'KeyJ') {
+    const { body } = document;
+    const html = document.documentElement;
+
+    const height = Math.max(body.scrollHeight, body.offsetHeight,
+      html.clientHeight, html.scrollHeight, html.offsetHeight);
+
+    const currentScrollLocation = document.documentElement.scrollTop || document.body.scrollTop;
+    if (currentScrollLocation === 0) {
+      window.scrollTo({
+        top: height,
+        left: 1000,
+        behavior: 'smooth',
+      });
+    } else {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+      });
+    }
+  }
+});
 
 
 });
