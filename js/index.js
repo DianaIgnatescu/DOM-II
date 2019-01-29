@@ -54,7 +54,6 @@ window.addEventListener('load', () => {
     window.addEventListener('scroll', (event) => {
       if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
         header.style.height = '40px';
-        TimelineLite('.main-navigation', 1, {ease:Back.easeOut});
       } else {
         header.style.height = '90px';
       }
