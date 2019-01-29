@@ -100,6 +100,21 @@ window.addEventListener('keyup', (event) => {
     }
   }
 });
+// === Preventing event propagation
+
+  let contentDestination = document.querySelector('.content-destination');
+  let imageDestination = document.querySelector('#destination');
+
+  contentDestination.addEventListener('click', () => {
+    console.log("handler for SECTION");
+  });
+
+  imageDestination.addEventListener('click', event => {
+    console.log("handler for IMAGE");
+    if (event.target.nodeName == 'IMG') {
+      event.stopPropagation();
+    } 
+  });
 
 
 });
