@@ -1,12 +1,21 @@
 // Your code goes here
 
-// 1. === Load === wait for everything on load.
+// 1. === Load === wait for everything on load.\
+window.addEventListener('load', () => {
 
 // 2. === Mouseover === change title image on mouseover.
+  const titleImage = document.getElementById('title-image');
+  titleImage.addEventListener('mouseover', () => {
+    titleImage.src = 'img/destination.jpg';
+  });
 
 // 3. === Mouseout === change title image back on mouseout.
+  titleImage.addEventListener('mouseout', () => {
+    titleImage.src = 'img/fun-bus.jpg';
+  });
 
 // 4. === Keydown === go to contact link when you hit the c key.
+  
 
 // 5. === Focus === change the color of the navigation item when in "focus".
 
@@ -19,3 +28,4 @@
 // 9. === Contextmenu === right clicking on something removes it. 
 
 // 10. === Keypress === pressing space either takes you to the bottom or the top.
+});
